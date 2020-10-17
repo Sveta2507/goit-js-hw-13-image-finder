@@ -2,3 +2,34 @@ body {
   background-color: black;
   color: wheat;
 }
+
+.gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.gallery li,
+.stats{
+  display: flex;
+}
+
+.gallery li {
+  flex-flow: column;
+  align-items: center;
+  border: 1px solid white;
+  padding: 20px 10px;
+}
+
+.isHidden {
+  display: none;
+}
+
+.loadMoreBtn {
+  display: block;
+  margin: 50px auto;
+  padding: 20px 10px;
+  background: black;
+  color: wheat;
+  border: 2px solid wheat;
+}
