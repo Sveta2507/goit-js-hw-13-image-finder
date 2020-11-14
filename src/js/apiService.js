@@ -18,15 +18,15 @@ export default {
     return this.per_page;
   },
   set perPage(val) {
-    return (this.per_page = val);
+    this.per_page = val;
   },
   get query() {
     return this.q;
   },
   set query(val) {
-    return (this.q = val);
+    this.q = val;
   },
   setPage() {
-    return (this.page += 1);
+    this.page += 1;
   },
 };
