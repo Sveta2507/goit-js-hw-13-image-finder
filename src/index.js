@@ -8,14 +8,14 @@ import debounce from "lodash.debounce";
 const loadMoreBtn = document.createElement("button");
 loadMoreBtn.textContent = "load more...";
 loadMoreBtn.classList.add("isHidden");
-// refs.ul.insertAdjacentElement("afterend", loadMoreBtn);
 refs.ul.after(loadMoreBtn);
-
+console.dir(refs.countSpan);
 refs.input.addEventListener(
   "input",
   debounce((event) => {
     refs.ul.innerHTML = "";
     apiService.query = event.target.value;
+    apiService.perPage = +refs.countSpan.textContent;
     apiService
       .getImages()
       .then((d) => insertElements(d.hits, imgTemplate, refs.ul));
@@ -35,14 +35,11 @@ function insertElements(data, template, place) {
   const element = template(data);
   place.insertAdjacentHTML("beforeend", element);
 }
-
-// function getCountOfElements(elem, decrementBtn, incrementBtn) {
-//   decrementBtn.addEventListener("click", () => {
-//     counter.decrement(elem);
-//   });
-//   incrementBtn.addEventListener("click", () => {
-//     counter.increment(elem);
-//   });
-
-//   return counter.count;
-// }
+refs.decrementBtn.addEventListener("click", () => {
+  counter.decrement(refs.countSpan, +refs.countSpan.textContent);
+  return refs.countSpan.textContent;
+});
+refs.incrementBtn.addEventListener("click", () => {
+  counter.increment(refs.countSpan, +refs.countSpan.textContent);
+  return refs.countSpan.textContent;
+});

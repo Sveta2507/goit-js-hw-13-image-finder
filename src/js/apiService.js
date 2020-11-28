@@ -7,7 +7,6 @@ export default {
   q: "",
   page: 1,
   per_page: 3,
-
   getImages() {
     let params = `?image_type=${this.imageType}&orientation=${this.orientation}&q=${this.q}&page=${this.page}&per_page=${this.per_page}&key=${this.apiKey}`;
     let url = `${this.baseUrl}${params}`;
@@ -19,6 +18,7 @@ export default {
   },
   set perPage(val) {
     this.per_page = val;
+    console.log("per_page", this.per_page);
   },
   get query() {
     return this.q;
