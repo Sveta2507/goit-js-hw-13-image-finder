@@ -14,6 +14,7 @@ refs.input.addEventListener(
   "input",
   debounce((event) => {
     refs.ul.innerHTML = "";
+    apiService.resetPage();
     apiService.query = event.target.value;
     apiService.perPage = +refs.countSpan.textContent;
     apiService
