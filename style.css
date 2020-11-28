@@ -1,1 +1,1 @@
-body{background-color:#000;color:wheat}
+body{background-color:#000;color:wheat}.gallery{flex-flow:row wrap;justify-content:space-between}.gallery,.gallery li,.stats{display:flex}.gallery li{flex-flow:column;align-items:center;border:1px solid #fff;padding:20px 10px}.isHidden{display:none}.loadMoreBtn{display:block;margin:50px auto;padding:20px 10px;background:#000;color:wheat;border:2px solid wheat}
